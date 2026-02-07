@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up Admin</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #333; text-align: left; }
+        th { background: #007bff; color: #fff; }
+        .hidden { display: none; }
+        #login { max-width: 300px; margin: 50px auto; padding: 20px; background:#fff; border-radius:10px; }
+        #login input { width: 100%; padding: 10px; margin: 10px 0; }
+        #login button { padding: 10px 15px; background:#007bff; color:#fff; border:none; cursor:pointer; }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+<div id="login">
+    <h3>Admin Login</h3>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Login</button>
+</div>
+
+<div id="adminContent" class="hidden">
+    <h2>Level Up Contributions</h2>
+    <table id="contributions">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Amount Paid</th>
+                <th>Payment Method</th>
+                <th>Date</th>
+                <th>WhatsApp/Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will appear here -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const adminPassword = "Kimathi@97"; // CHANGE to your own secure password
+
+    function checkPassword() {
+        const input = document.getElementById("password").value;
+        if(input === adminPassword) {
+            document.getElementById("login").classList.add("hidden");
+            document.getElementById("adminContent").classList.remove("hidden");
+            loadSheet();
+        } else {
+            alert("Incorrect password!");
+        }
+    }
+
+    function loadSheet() {
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            const queryString = encodeURIComponent('SELECT A,B,C,D,E');
+            const sheetId = 'YOUR_SHEET_ID_HERE'; // <-- Replace with your Sheet ID
+            const query = new google.visualization.Query(
+                `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?sheet=Sheet1&tq=${queryString}`
+            );
+
+            query.send(handleQueryResponse);
+
+            function handleQueryResponse(response) {
+                if (response.isError()) {
+                    alert('Error fetching data: ' + response.getMessage());
+                    return;
+                }
+                const data = response.getDataTable();
+                const table = new google.visualization.Table(document.getElementById('contributions'));
+                table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
