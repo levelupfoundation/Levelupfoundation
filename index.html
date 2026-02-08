@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level Up Foundation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Level Up Foundation</div>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#focus">What We Do</a></li>
+        <li><a href="#donate">Donate</a></li>
+
+        <li class="dropdown">
+            <a href="#">More ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#impact">Our Impact</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="auth-buttons">
+        <button onclick="openModal('loginModal')">Sign In</button>
+        <button class="primary" onclick="openModal('registerModal')">Register</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <h1>Empowering People. Building Futures.</h1>
+    <p>A global charity movement focused on skills, teamwork, and opportunity.</p>
+    <a href="#donate" class="cta">Support the Mission</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>Who We Are</h2>
+    <p>
+        Level Up Foundation is a fast-growing charitable organization dedicated to
+        empowering individuals and communities through skills development, teamwork,
+        and financial awareness.
+    </p>
+</section>
+
+<!-- FOCUS -->
+<section id="focus" class="dark">
+    <h2>What We Do</h2>
+    <div class="grid">
+        <div class="box">Skills & Training</div>
+        <div class="box">Youth Empowerment</div>
+        <div class="box">Community Growth</div>
+        <div class="box">Financial Support</div>
+    </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+    <h2>Our Impact</h2>
+    <div class="stats">
+        <div><strong>10K+</strong><span>Lives Impacted</span></div>
+        <div><strong>50+</strong><span>Communities</span></div>
+        <div><strong>100+</strong><span>Volunteers</span></div>
+    </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate" class="donate">
+    <h2>Make a Contribution</h2>
+    <p>Your support fuels real change.</p>
+
+    <div class="payment-cards">
+        <div class="payment">
+            <h3>M-Pesa</h3>
+            <p>Number: <strong>+254 743 960 811</strong></p>
+            <button>Donate via M-Pesa</button>
+        </div>
+
+        <div class="payment">
+            <h3>Payanoor</h3>
+            <p>Email: <strong>levelup@payanoor.com</strong></p>
+            <button>Donate via Payanoor</button>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: levelupfoundation12@gmail.com</p>
+    <p>WhatsApp: +254 743 960 811</p>
+</section>
+
+<footer>
+    © 2026 Level Up Foundation | Building Futures Together
+</footer>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeModal('loginModal')" class="close">&times;</span>
+        <h3>Sign In</h3>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="primary">Sign In</button>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeModal('registerModal')" class="close">&times;</span>
+        <h3>Create Account</h3>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="primary">Register</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

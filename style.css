@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0b1c2d;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #1c2f4a;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 8px 14px;
+}
+
+.primary {
+    background: #ffcc00;
+    border: none;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.dark {
+    background: #eef2f7;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.donate {
+    background: #dde7ff;
+}
+
+.payment-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.payment {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0b1c2d;
+    color: white;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    margin: 10% auto;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
